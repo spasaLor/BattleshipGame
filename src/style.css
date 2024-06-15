@@ -1,0 +1,231 @@
+body{
+    margin:0;
+    font-family: 'Roboto';
+    font-size: 18px;
+    height: 100vh;
+    overflow:hidden;
+}
+h1,h2,h3,p{
+    margin:0;
+}
+
+#title{
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 100%;
+    width: 100%;
+}
+
+.modalContainer{
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+button{
+    width: 10em;
+    height: 3em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.modalContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:50px;
+    align-items: center;
+    height: 100%;
+}
+
+.modalContent h2{
+    color:white;
+}
+
+.player1, .player2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 50px 0px;
+    box-sizing: border-box;
+}
+.board1, .board2, .grid{
+    display: grid;
+    grid-template-columns: repeat(10,40px);
+    grid-template-rows: repeat(10,40px);
+    gap:3px;
+}
+
+.cover1, .cover2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: rgba(119, 123, 119, 0.8);
+    color: black;
+    width: 430px;
+    height: 430px;
+    position: absolute;
+    top:256px;
+}
+
+.emptyCell, .shipCell, .hitCell, .missCell{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.emptyCell{
+    background-color: azure;
+    border: 1px solid gray;
+}
+.shipCell{
+    background-color: darkblue;
+    border: 1px solid blue;
+}
+.hitCell, .missCell{
+    background-color: rgba(0, 0, 139,0.5);
+    border: 1px solid red;
+    position: relative;
+}
+.hitCell::before, .missCell::before{
+    content: 'X';
+    font-size: 30px;
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.missCell{
+    border: 1px solid rgb(146,143,177);
+    background-color: gray;
+}
+.missCell::before{
+    content: '•';
+    color:black;
+    vertical-align: middle;
+}
+
+.newContainer{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto auto;
+}
+
+.rightContainer{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightItem{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap:5px;
+}
+
+.leftContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newContainer h2{
+    grid-row: 1;
+    grid-column: 1/3;
+    align-self: center;
+    text-align: center;
+}
+
+.newContainer .btnContainer{
+    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 700px;
+}
+.btnContainer button{
+    width: 10em;
+    height: 3em;
+}
+
+.top{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap:60px;
+}
+
+.bottom{
+    display: flex;
+}
+.bottom .labelCont{
+    display: flex;
+    align-items: center;
+    gap:5px
+}
+.bottom input{
+    width:40%;
+}
+
+.shipImage{
+    height: 50px;
+    width: 100px;
+}
+
+.homeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap:100px;
+    height: 100%;
+}
+
+.homeContainer >div{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 50px;
+    padding: 40px 20px;
+    border: 1px solid gray;
+}
+
+.left{
+    align-self: center;
+    border-right: 1px solid gray;
+    padding-right: 55px;
+}
+
+.left input{
+    font-size: 1em;
+    padding-left:6px;
+}
+
+.left label{
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.right h3{
+    margin-bottom: 5px;
+}
+
+.innerRight{
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+}
